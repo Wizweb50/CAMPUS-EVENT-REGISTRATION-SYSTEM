@@ -1,3 +1,4 @@
+
 from student import Student
 from registration import RegistrationManager
 
@@ -9,7 +10,8 @@ def main():
         print("\n===== Campus Event Registration =====")
         print("1. Register Student")
         print("2. Display Participants")
-        print("3. Exit")
+        print("3. Search Registration")
+        print("4. Exit")
 
         choice = input("Enter your choice: ")
 
@@ -27,6 +29,17 @@ def main():
             manager.display_participants()
 
         elif choice == "3":
+            reg_no = input("Enter registration number to search: ")
+
+            student = manager.search_student(reg_no)
+
+            if student:
+                print("\nRegistration Found!")
+                print(student.display())
+            else:
+                print("\nError: No registration found.")
+
+        elif choice == "4":
             print("Exiting application...")
             break
 

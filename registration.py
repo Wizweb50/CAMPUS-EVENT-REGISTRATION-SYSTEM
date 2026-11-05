@@ -28,3 +28,10 @@ class RegistrationManager:
 
         for student in self.students:
             print(student.display())
+            
+    def search_student(self, registration_number):
+        for student in self.students:
+            if student.registration_number == registration_number:
+                return student
+
+        return None
